@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fanplay IoT Shot Data Collector</title>
+    <link rel="stylesheet" href="stylesvid.css">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header>
+        <div class="header-container">
+            <img src="logo.png" alt="Logo" class="logo"> <!-- Placeholder for the logo -->
+            <h1>Fanplay IoT Shot Data Collector</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="report.html">Go to Reports</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Input Fields for Name of Player and Name of Shot -->
+        <div class="form-group">
+            <div>
+                <label for="player-name">Name of Player:</label>
+                <input type="text" id="player-name" placeholder="Enter Player Name" value="VJ">
+            </div>
+
+            <div>
+                <label for="shot-name">Name of Shot:</label>
+                <select id="shot-name">
+                    <option value="shot" selected>Shot</option>
+                    <option value="SquareCut">SquareCut</option>
+                    <option value="CoverDrive">CoverDrive</option>
+                    <option value="StraightDrive">StraightDrive</option>
+                    <option value="Pull">Pull</option>
+                    <option value="Hook">Hook</option>
+                    <option value="Glance">Glance</option>
+                    <option value="FrontDefence">FrontDefence</option>
+                    <option value="UpperCut">UpperCut</option>
+                    <option value="Sweep">Sweep</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- BLE Controls -->
+        <div class="ble-controls">
+            <button id="ble-button">Connect to BLE</button>
+            <p id="ble-status">Status: Not connected</p>
+        </div>
+
+        <p id="status-message" style="visibility: hidden; text-align: center; margin-top: 20px;"></p>
+
+        <!-- Container for Game Animation -->
+        <div id="game-container">
+            <img id="gif-animation" src="animation_static.png" alt="Game Animation">
+        </div>
+    </main>
+
+    <!-- JavaScript Files -->
+    <script src="config.js" type="module"></script>
+    <script src="datapi.js" type="module"></script>
+    <script src="scriptvid.js" type="module"></script>
+    <script src="ble.js" type="module"></script>
+</body>
+</html>

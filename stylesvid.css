@@ -1,0 +1,233 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eef;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Styling */
+header {
+    background-color: #5edbf4;
+    color: #200deb;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+    margin-right: 20px;
+}
+
+header h1 {
+    flex: 1;
+    text-align: center;
+    font-size: 1.5em;
+    margin: 0;
+}
+
+header nav a {
+    color: #3308f6;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: background 0.3s ease;
+}
+
+header nav a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+/* Main Content Styling */
+main {
+    max-width: 1000px;
+    margin: 120px auto 20px; /* Prevent header overlap */
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+/* Form Styling */
+.form-group {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping for responsiveness */
+    gap: 15px;
+    margin-bottom: 20px;
+    justify-content: flex-start;
+}
+
+label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+input[type="text"], select {
+    padding: 8px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* BLE Controls */
+.ble-controls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 20px;
+    gap: 15px;
+}
+
+#ble-button {
+    flex: 0 0 auto;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#ble-button:hover {
+    background-color: #555;
+}
+
+#ble-status {
+    flex: 1 1 auto;
+    font-size: 1em;
+    text-align: left;
+    margin: 0;
+    padding: 10px;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Game Section */
+#game-container {
+    margin-top: 20px;
+    width: 100%;
+    height: 400px;
+    border: 2px solid #ddd;
+    background-color: #f9f9f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* GIF Styling */
+#gif-animation {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    z-index: 1;
+    display: block; /* Ensure it displays within the container */
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    border: 1px solid #ddd; /* Add border around the table */
+}
+
+table th, table td {
+    padding: 10px;
+    border: 1px solid #ddd; /* Add border to cells */
+    text-align: center;
+}
+
+table th {
+    background-color: #5edbf4;
+    color: white;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table tr:hover {
+    background-color: #e2e2e2;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header h1 {
+        margin: 10px 0;
+    }
+
+    header nav a {
+        display: inline-block;
+        margin: 5px;
+    }
+
+    main {
+        margin-top: 150px;
+    }
+
+    .form-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    label {
+        margin-bottom: 5px;
+    }
+
+    input[type="text"], select {
+        margin-left: 0;
+    }
+
+    #game-container {
+        height: 300px; /* Adjust for smaller screens */
+    }
+}

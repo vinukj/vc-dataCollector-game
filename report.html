@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shot Data Reports</title>
+    <link rel="stylesheet" href="stylesvid.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <img src="logo.png" alt="Logo" class="logo">
+            <h1>Shot Data Reports</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="report.html">Reports</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Buttons -->
+        <div class="report-buttons">
+            <button id="download-csv">Download CSV</button>
+            <button id="get-shot-count">Shots Per Shot Type</button>
+            <button id="get-player-shots">Shots Per Player</button>
+        </div>
+
+        <!-- Report Title -->
+        <h2 id="report-title">Reports</h2>
+
+        <!-- Table for Displaying Report Data -->
+        <div id="report-container">
+            <table id="report-table" class="hidden">
+                <thead id="table-head"></thead>
+                <tbody id="table-body"></tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- JavaScript Files -->
+    <script src="config.js" type="module"></script>
+     <script src="datapi.js" type="module"></script>
+    <script type="module" src="reports.js"></script>
+</body>
+</html>
