@@ -18,7 +18,7 @@ gifAnimation.style.objectFit = "contain";
 gameContainer.innerHTML = ""; // Clear any existing content
 gameContainer.appendChild(gifAnimation);
 
-const gifDuration = 5000; // Duration in milliseconds for one GIF loop
+const gifDuration = 6000; // Duration in milliseconds for one GIF loop
 let isPlaying = false;
 let gifTimeout;
 
