@@ -3,15 +3,15 @@ const gifAnimation = document.createElement("img");
 
 // Static Image and GIF File Paths
 const staticImagePath = "./animation_static.png";
-const gifPath = "./animation.gif";
+const gifPath = "./bowl.gif";
 
 // Setup GIF Animation
 gifAnimation.id = "gif-animation";
 gifAnimation.src = staticImagePath; // Start with static image
 gifAnimation.alt = "GIF Animation";
 gifAnimation.style.display = "block"; // Initially show the static image
-gifAnimation.style.maxWidth = "100%";
-gifAnimation.style.maxHeight = "100%";
+gifAnimation.style.maxWidth = "150%";
+gifAnimation.style.maxHeight = "150%";
 gifAnimation.style.objectFit = "contain";
 
 // Append to Game Container
