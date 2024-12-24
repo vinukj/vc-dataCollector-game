@@ -19,8 +19,15 @@
         </div>
     </header>
 
-    <!-- Main Content -->
+    <!-- Main Content -->   
     <main>
+        <!-- Date Filter -->
+        <div class="date-filter">
+            <label for="date-picker">Select Date:</label>
+            <input type="date" id="date-picker">
+            <button id="reset-date">Reset Date</button>
+        </div>
+
         <!-- Buttons -->
         <div class="report-buttons">
             <button id="download-csv">Download CSV</button>
@@ -42,7 +49,6 @@
 
     <!-- JavaScript Files -->
     <script src="config.js" type="module"></script>
-     <script src="datapi.js" type="module"></script>
     <script type="module" src="reports.js"></script>
 </body>
 </html>
