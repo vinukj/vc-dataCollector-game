@@ -78,14 +78,32 @@ async function postFeatureData(jsonData) {
 }
 
 // Fetch all data from Supabase
-export async function fetchAllData() {
-    const response = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE_NAME}`, {
-        headers: {
-            "apikey": API_KEY,
-            "Authorization": `Bearer ${API_KEY}`
+// export async function fetchAllData() {
+//     const response = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE_NAME}`, {
+//         headers: {
+//             "apikey": API_KEY,
+//             "Authorization": `Bearer ${API_KEY}`
+//         }
+//     });
+
+//     if (!response.ok) throw new Error("Failed to fetch data from Supabase");
+//     return await response.json();
+// }
+
+async function fetchAllData() {
+    const response = await fetch(
+        `${SUPABASE_URL}/rest/v1/${TABLE_NAME}?select=*&offset=0&limit=10000`, 
+        {
+            headers: {
+                apikey: API_KEY,
+                Authorization: `Bearer ${API_KEY}`
+            }
         }
-    });
+    );
 
     if (!response.ok) throw new Error("Failed to fetch data from Supabase");
-    return await response.json();
+
+    const data = await response.json();
+    console.log(`Fetched ${data.length} rows from Supabase.`);
+    return data;
 }

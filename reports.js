@@ -13,17 +13,40 @@ const reportTable = document.getElementById("report-table");
 
 // Fetch all data from Supabase
 async function fetchAllData() {
-    const response = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE_NAME}`, {
-        headers: {
-            apikey: API_KEY,
-            Authorization: `Bearer ${API_KEY}`
-        }
-    });
+    const pageSize = 1000; // Number of rows to fetch per request
+    let offset = 0; // Starting offset
+    let allData = []; // To store all rows
 
-    if (!response.ok) throw new Error("Failed to fetch data from Supabase");
-    return response.json();
+    while (true) {
+        const response = await fetch(
+            `${SUPABASE_URL}/rest/v1/${TABLE_NAME}?select=*&offset=${offset}&limit=${pageSize}`,
+            {
+                headers: {
+                    apikey: API_KEY,
+                    Authorization: `Bearer ${API_KEY}`,
+                },
+            }
+        );
+
+        if (!response.ok) throw new Error("Failed to fetch data from Supabase");
+
+        const data = await response.json();
+
+        // Break if no more rows are returned
+        if (data.length === 0) break;
+
+        // Append fetched rows to the result array
+        allData = allData.concat(data);
+
+        // Increase offset for the next batch
+        offset += pageSize;
+
+        console.log(`Fetched ${data.length} rows, Total: ${allData.length}`);
+    }
+
+    console.log(`Fetched a total of ${allData.length} rows from Supabase.`);
+    return allData;
 }
-
 // Function to convert JSON to CSV
 function jsonToCSV(data) {
     const headers = [
